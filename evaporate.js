@@ -1432,6 +1432,8 @@
                     return;
                 }
 
+                url += ('&canonical_request=' + encodeURIComponent(canonicalRequestV4(authRequester)));
+
                 var signParams = makeSignParamsObject(me.signParams);
                 for (var param in signParams) {
                     if (!signParams.hasOwnProperty(param)) { continue; }
